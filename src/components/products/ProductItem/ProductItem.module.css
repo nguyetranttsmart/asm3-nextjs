@@ -1,0 +1,50 @@
+.card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.carImage {
+    display: flex;
+    width: 100%;
+}
+
+.carImage img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.carDescription p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.carPrice {
+    margin-top: 20px;
+}
+
+.carPrice p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.carPrice span {
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        max-width: 300px;
+
+    }
+}
