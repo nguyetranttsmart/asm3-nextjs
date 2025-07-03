@@ -1,7 +1,7 @@
 "use client";
+import Test from "@/components/home/Test";
 import React, { useMemo, useState } from "react";
 import styles from "./Tabs.module.css";
-import Test from "@/components/home/Test";
 
 export interface ITabItem {
   label:
@@ -18,7 +18,7 @@ interface TabsProps {
   renderContent?: (selectedItem: ITabItem) => React.ReactNode;
 }
 
-export default function Tabs({ tabs, defaultKey, renderContent }: TabsProps) {
+export default function Tabs({ tabs, defaultKey }: TabsProps) {
   const [selectedKey, setSelectedKey] = useState<string>(
     defaultKey || tabs?.[0]?.key
   );

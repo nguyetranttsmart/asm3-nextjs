@@ -1,10 +1,10 @@
 "use client";
-import React, { useState, useRef, useMemo } from "react";
-import styles from "./CarFinance.module.css";
-import PriceInput from "../PriceInput";
-import LoanTermSelector from "../LoanTermSelector";
+import { useMemo, useState } from "react";
 import InterestRate from "../InterestRate";
+import LoanTermSelector from "../LoanTermSelector";
 import PaymentBlock from "../PaymentBlock";
+import PriceInput from "../PriceInput";
+import styles from "./CarFinance.module.css";
 
 export default function CarFinance() {
   const [selectedYear, setSelectedYear] = useState(2);

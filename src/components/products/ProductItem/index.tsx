@@ -1,7 +1,5 @@
-import React from "react";
 import { IProduct } from "@/components/products";
 import styles from "./ProductItem.module.css";
-import Image from "next/image";
 
 interface Props {
   product: IProduct;

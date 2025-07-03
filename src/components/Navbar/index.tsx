@@ -1,7 +1,6 @@
-import React from "react";
-import styles from "./Navbar.module.css";
+import { faBars, faCar, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCar, faBars, faHeart } from "@fortawesome/free-solid-svg-icons";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   return (

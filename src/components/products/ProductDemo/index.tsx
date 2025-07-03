@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IProduct } from "../type";
-import ProductItem from "../ProductItem";
-import Carousel from "@/components/commons/Carousel";
-import styles from "./ProductDemo.module.css";
 
 type ProductProps = {
   priceMin: number;

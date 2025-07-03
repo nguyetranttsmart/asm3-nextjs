@@ -1,11 +1,11 @@
 "use client";
-import React, {
-  useRef,
-  useEffect,
-  useState,
-  ReactNode,
+import {
   PointerEvent,
+  ReactNode,
+  useEffect,
   useLayoutEffect,
+  useRef,
+  useState,
 } from "react";
 import styles from "./Carousel.module.css";
 

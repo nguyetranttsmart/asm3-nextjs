@@ -1,9 +1,8 @@
-import { Carousel, Tabs } from "@/components/commons";
-import ProductItem from "@/components/products/ProductItem";
+import { Tabs } from "@/components/commons";
 import useProducts from "@/hooks/products/useProducts";
+import Test from "../Test";
 import styles from "./FeaturedProduct.module.css";
 import TabItem from "./TabItem";
-import Test from "../Test";
 
 const a = [
   {
