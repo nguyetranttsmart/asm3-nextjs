@@ -10,7 +10,6 @@
   },
   {
     "id": 2,
-
     "name": "2019 Audi SQ5",
     "imageUrl": "/images/car02.webp",
     "type": "Sedan",
@@ -28,8 +27,7 @@
     "price": "469,000"
   },
   {
-        "id": 4,
-
+    "id": 4,
     "name": "2021 SKODA SCALA",
     "imageUrl": "/images/car04.webp",
     "type": "SUV",
@@ -46,7 +44,8 @@
     "distance": "17,500 km",
     "price": "$69,000"
   },
-  {"id": 6,
+  {
+    "id": 6,
     "name": "2023 VOLVO XC40",
     "imageUrl": "/images/car03.webp",
     "type": "Hatch",
@@ -89,6 +88,185 @@
     "brand": "Huyndai",
     "distance": "13,500 km",
     "price": "$99,000"
+  },
+  {
+    "id": 11,
+    "name": "2018 BMW M5",
+    "imageUrl": "/images/car03.webp",
+    "type": "Ute",
+    "brand": "Ford",
+    "distance": "16,500 km",
+    "price": "469,000"
+  },
+  {
+    "id": 12,
+    "name": "2021 SKODA SCALA",
+    "imageUrl": "/images/car04.webp",
+    "type": "SUV",
+    "brand": "Huyndai",
+    "distance": "13,500 km",
+    "price": "$99,000"
+  },
+  {
+    "id": 13,
+    "name": "2022 TOYOTA COROLLA SPORT",
+    "imageUrl": "/images/car05.webp",
+    "type": "Van",
+    "brand": "Mazda",
+    "distance": "17,500 km",
+    "price": "$69,000"
+  },
+  {
+    "id": 14,
+    "name": "2023 VOLVO XC40",
+    "imageUrl": "/images/car03.webp",
+    "type": "Hatch",
+    "brand": "Jeep",
+    "distance": "13,500 km",
+    "price": "$19,000"
+  },
+  {
+    "id": 15,
+    "name": "2023 VOLVO XC40",
+    "imageUrl": "/images/car01.webp",
+    "type": "Vip",
+    "brand": "Jeep",
+    "distance": "13,500 km",
+    "price": "$19,000"
+  },
+  {
+    "id": 16,
+    "name": "2023 VOLVO XC40",
+    "imageUrl": "/images/car03.webp",
+    "type": "Van",
+    "brand": "Jeep",
+    "distance": "13,500 km",
+    "price": "$19,000"
+  },
+  {
+    "id": 17,
+    "name": "2023 VOLVO XC40",
+    "imageUrl": "/images/car01.webp",
+    "type": "Hatch",
+    "brand": "Jeep",
+    "distance": "13,500 km",
+    "price": "$19,000"
+  },
+  {
+    "id": 18,
+    "name": "2021 SKODA SCALA",
+    "imageUrl": "/images/car04.webp",
+    "type": "Van",
+    "brand": "Huyndai",
+    "distance": "13,500 km",
+    "price": "$99,000"
+  },
+  {
+    "id": 19,
+    "name": "2018 BMW M5",
+    "imageUrl": "/images/car03.webp",
+    "type": "Ute",
+    "brand": "Ford",
+    "distance": "16,500 km",
+    "price": "469,000"
+  },
+  {
+    "id": 20,
+    "name": "2021 SKODA SCALA",
+    "imageUrl": "/images/car04.webp",
+    "type": "SUV",
+    "brand": "Huyndai",
+    "distance": "13,500 km",
+    "price": "$99,000"
+  },
+  {
+    "id": 21,
+    "name": "2022 TOYOTA COROLLA SPORT",
+    "imageUrl": "/images/car05.webp",
+    "type": "Van",
+    "brand": "Mazda",
+    "distance": "17,500 km",
+    "price": "$69,000"
+  },
+  {
+    "id": 22,
+    "name": "2023 VOLVO XC40",
+    "imageUrl": "/images/car03.webp",
+    "type": "Hatch",
+    "brand": "Jeep",
+    "distance": "13,500 km",
+    "price": "$19,000"
+  },
+  {
+    "id": 23,
+    "name": "2023 VOLVO XC40",
+    "imageUrl": "/images/car01.webp",
+    "type": "Vip",
+    "brand": "Jeep",
+    "distance": "13,500 km",
+    "price": "$19,000"
+  },
+  {
+    "id": 24,
+    "name": "2023 VOLVO XC40",
+    "imageUrl": "/images/car03.webp",
+    "type": "Van",
+    "brand": "Jeep",
+    "distance": "13,500 km",
+    "price": "$19,000"
+  },
+  {
+    "id": 25,
+    "name": "2023 VOLVO XC40",
+    "imageUrl": "/images/car01.webp",
+    "type": "Hatch",
+    "brand": "Jeep",
+    "distance": "13,500 km",
+    "price": "$19,000"
+  },
+  {
+    "id": 26,
+    "name": "2021 SKODA SCALA",
+    "imageUrl": "/images/car04.webp",
+    "type": "Van",
+    "brand": "Huyndai",
+    "distance": "13,500 km",
+    "price": "$99,000"
+  },
+  {
+    "id": 27,
+    "name": "2022 ISUZU D-MAX",
+    "imageUrl": "/images/car01.webp",
+    "type": "SUV",
+    "brand": "Toyota",
+    "distance": "19,500 km",
+    "price": "$20,000"
+  },
+  {
+    "id": 28,
+    "name": "2019 Audi SQ5",
+    "imageUrl": "/images/car02.webp",
+    "type": "Sedan",
+    "brand": "3.0 TFSI QUATTRO",
+    "distance": "19,500 km",
+    "price": "$42,990"
+  },
+  {
+    "id": 29,
+    "name": "2018 BMW M5",
+    "imageUrl": "/images/car03.webp",
+    "type": "Ute",
+    "brand": "Ford",
+    "distance": "16,500 km",
+    "price": "469,000"
+  },
+  {
+    "id": 30,
+    "name": "2021 SKODA SCALA",
+    "imageUrl": "/images/car04.webp",
+    "type": "SUV",
+    "brand": "Huyndai",
+    "distance": "13,500 km",
+    "price": "$99,000"
   }
-
 ]

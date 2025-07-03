@@ -1,0 +1,59 @@
+.loanBlockButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.loanButton {
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px 20px;
+    border: 1px solid;
+    border-radius: 20px;
+    border-color: rgb(190, 189, 189);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.loanButton:hover {
+    background-color: #d9d1e0;
+
+}
+
+.loanBlockTitle,
+.leftBlock p {
+    font-weight: bold;
+    padding: 5px 0;
+    font-size: 18px;
+}
+
+.loanBlock {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+
+.active {
+    color: rgb(0, 0, 0);
+    background-color: #d9d1e0;
+    outline-style: solid;
+    outline-color: purple;
+    outline-width: 2px;
+}
+
+@media (min-width: 1024px) {
+
+    .loanBlockButtons {
+        display: flex;
+    }
+
+    .loanButton {
+        flex: 1;
+    }
+
+
+}

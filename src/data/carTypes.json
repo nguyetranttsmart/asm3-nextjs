@@ -1,8 +1,8 @@
 [
-  { "name": "SUV", "imageUrl": "/images/SUV.svg", "id": "SUV" },
-  { "name": "Ute", "imageUrl": "/images/Ute.svg", "id": "Ute" },
-  { "name": "Hatch", "imageUrl": "/images/Hatch.svg", "id": "Hatch" },
-  { "name": "Coupe", "imageUrl": "/images/Coupe.svg", "id": "Coupe" },
-  { "name": "Sedan", "imageUrl": "/images/Sedan.svg", "id": "Sedan" },
-  { "name": "Vip", "imageUrl": "/images/Vip.svg", "id": "Vip" }
+  { "label": "SUV", "imageUrl": "/images/SUV.svg", "key": "SUV" },
+  { "label": "Ute", "imageUrl": "/images/Ute.svg", "key": "Ute" },
+  { "label": "Hatch", "imageUrl": "/images/Hatch.svg", "key": "Hatch" },
+  { "label": "Coupe", "imageUrl": "/images/Coupe.svg", "key": "Coupe" },
+  { "label": "Sedan", "imageUrl": "/images/Sedan.svg", "key": "Sedan" },
+  { "label": "Vip", "imageUrl": "/images/Vip.svg", "key": "Vip" }
 ]

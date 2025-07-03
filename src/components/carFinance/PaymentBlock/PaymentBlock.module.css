@@ -1,0 +1,39 @@
+.paymentBlock {
+    background-color: #f9f8f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 10px 0;
+}
+
+.paymentBlockLable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px
+}
+
+.paymentBlockLable p {
+    font-size: 18px;
+}
+
+.paymentBlockLable span {
+    font-size: 30px;
+}
+
+.paymentBlockLable h2 {
+    font-size: 40px;
+}
+
+.paymentBlockButton button {
+    background-color: #d5185c;
+    padding: 20px 60px;
+    color: white;
+    font-size: 16px;
+    border-radius: 20px;
+    border: none;
+    font-weight: 600;
+}

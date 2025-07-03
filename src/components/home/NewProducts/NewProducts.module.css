@@ -1,0 +1,10 @@
+.newProductSection {
+    padding: 100px
+}
+
+@media only screen and (max-width: 600px) {
+    .newProductSection {
+        padding: 0;
+    }
+
+}

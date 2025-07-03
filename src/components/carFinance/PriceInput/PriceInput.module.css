@@ -1,0 +1,58 @@
+.myRepaymentInput {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.purcharsePriceInput,
+.depositAmountInput {
+    width: 100%;
+    height: auto;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: rgb(190, 189, 189);
+    padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.focusedInput {
+    outline-style: solid;
+    outline-color: purple;
+    outline-width: 3px;
+
+}
+
+.purcharsePriceInput p,
+.depositAmountInput p {
+    font-size: 15px;
+}
+
+.purcharsePriceInput span,
+.depositAmountInput span {
+    font-size: 20px;
+    color: rgb(92, 92, 92);
+}
+
+.purcharsePriceInput input,
+.depositAmountInput input {
+    width: 80%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+
+}
+
+.myRepaymentTitle {
+    font-weight: bold;
+    padding: 5px 0;
+    font-size: 18px;
+}
+
+@media (min-width: 1280px) {
+    .myRepaymentInput {
+        display: flex;
+        flex-direction: row;
+    }
+}
