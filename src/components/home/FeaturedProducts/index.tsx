@@ -1,6 +1,6 @@
-import { Tabs } from "@/components/commons";
+import { Carousel, Tabs } from "@/components/commons";
+import ProductItem from "@/components/products/ProductItem";
 import useProducts from "@/hooks/products/useProducts";
-import Test from "../Test";
 import styles from "./FeaturedProduct.module.css";
 import TabItem from "./TabItem";
 
@@ -32,26 +32,29 @@ const a = [
 ];
 
 const FeaturedProducts = () => {
+  const products = useProducts();
   return (
     <div className={styles.filteredProductSection}>
       <h2>Looking for a specific size11?</h2>
       <Tabs
         tabs={a}
         renderContent={(selectedItem) => {
-          const products = useProducts({ typeId: selectedItem.key });
+          const filteredProduct = products.filter(
+            (product) => product.type === selectedItem.key
+          );
           return (
-            <Test />
-            // <Carousel
-            //   items={products}
-            //   renderItem={(item) => <ProductItem product={item} />}
-            //   autoPlay={true}
-            //   autoPlayInterval={3000}
-            //   responsiveConfig={[
-            //     { breakpoint: 1280, visibleCount: 3, itemToScroll: 3 },
-            //     { breakpoint: 1024, visibleCount: 2, itemToScroll: 2 },
-            //     { breakpoint: 768, visibleCount: 2, itemToScroll: 1 },
-            //   ]}
-            // />
+            <Carousel
+              items={filteredProduct}
+              key={selectedItem.key}
+              renderItem={(item) => <ProductItem product={item} />}
+              // autoPlay={true}
+              autoPlayInterval={3000}
+              responsiveConfig={[
+                { breakpoint: 1280, visibleCount: 3, itemToScroll: 3 },
+                { breakpoint: 1024, visibleCount: 2, itemToScroll: 2 },
+                { breakpoint: 768, visibleCount: 2, itemToScroll: 1 },
+              ]}
+            />
           );
         }}
       ></Tabs>

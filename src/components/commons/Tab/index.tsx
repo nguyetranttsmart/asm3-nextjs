@@ -1,5 +1,4 @@
 "use client";
-import Test from "@/components/home/Test";
 import React, { useMemo, useState } from "react";
 import styles from "./Tabs.module.css";
 
@@ -18,15 +17,13 @@ interface TabsProps {
   renderContent?: (selectedItem: ITabItem) => React.ReactNode;
 }
 
-export default function Tabs({ tabs, defaultKey }: TabsProps) {
+export default function Tabs({ tabs, defaultKey, renderContent }: TabsProps) {
   const [selectedKey, setSelectedKey] = useState<string>(
     defaultKey || tabs?.[0]?.key
   );
   const selectedItem = useMemo(() => {
     return tabs.find((item) => item.key === selectedKey);
   }, [selectedKey]);
-
-  console.log("selectedItem", selectedItem);
 
   return (
     <div className={styles.wrapper}>
@@ -46,7 +43,13 @@ export default function Tabs({ tabs, defaultKey }: TabsProps) {
         ))}
       </div>
       <div className={styles.tabContent}>
-        <Test key={selectedItem.key} />
+        {selectedItem && (
+          <div>
+            {selectedItem?.component
+              ? selectedItem?.component
+              : renderContent?.(selectedItem)}
+          </div>
+        )}
       </div>
     </div>
   );

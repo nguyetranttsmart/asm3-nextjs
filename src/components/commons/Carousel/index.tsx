@@ -74,7 +74,7 @@ export default function Carousel<T>({
     return () => window.removeEventListener("resize", handleResize);
   }, [responsiveConfig, visibleCount, itemToScroll]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!itemRef.current) return;
 
     const observer = new ResizeObserver(() => {
@@ -86,24 +86,20 @@ export default function Carousel<T>({
     return () => observer.disconnect();
   }, [currentVisibleCount, items]);
 
-  useEffect(() => {
-    console.log("`first`");
-  }, []);
-
   // Set item width
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (itemRef.current) {
       setItemWidth(itemRef.current.offsetWidth);
     }
   }, [items, currentVisibleCount]);
 
   // Update translateX when currentIndex changes
-  useEffect(() => {
+  useLayoutEffect(() => {
     setTranslateX(-currentIndex * itemWidth * currentItemToScroll);
   }, [currentIndex, itemWidth, currentItemToScroll]);
 
   // AutoPlay
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!autoPlay || items.length <= currentVisibleCount) return;
 
     const timeout = setTimeout(() => {
