@@ -48,8 +48,13 @@ export default function Carousel<T>({
   const isDragging = useRef(false);
   const startX = useRef(0);
 
-  const totalSlides =
-    Math.ceil((items.length - currentVisibleCount) / currentItemToScroll) + 1;
+  const totalSlides = Math.max(
+    1,
+    Math.ceil(
+      Math.max(0, items.length - currentVisibleCount) /
+        Math.max(1, currentItemToScroll)
+    ) + 1
+  );
 
   const dragThreshold = itemWidth * 0.3;
 
@@ -59,26 +64,52 @@ export default function Carousel<T>({
       const matched = responsiveConfig
         .sort((a, b) => b.breakpoint - a.breakpoint)
         .find((config) => width >= config.breakpoint);
+
+      let newVisibleCount = visibleCount;
+      let newItemToScroll = itemToScroll;
+
       if (matched) {
-        setCurrentVisibleCount(matched.visibleCount);
-        setCurrentItemToScroll(matched.itemToScroll);
-      } else {
-        setCurrentVisibleCount(visibleCount);
-        setCurrentItemToScroll(itemToScroll);
+        newVisibleCount = matched.visibleCount;
+        newItemToScroll = matched.itemToScroll;
       }
+
+      setCurrentIndex((prev) => {
+        const currentItemIndex = prev * currentItemToScroll;
+        const newSlideIndex = Math.floor(currentItemIndex / newItemToScroll);
+        const newTotalSlides = Math.max(
+          1,
+          Math.ceil(
+            Math.max(0, items.length - newVisibleCount) /
+              Math.max(1, newItemToScroll)
+          ) + 1
+        );
+        const finalIndex = Math.min(newSlideIndex, newTotalSlides - 1);
+        return finalIndex;
+      });
+
+      setCurrentVisibleCount(newVisibleCount);
+      setCurrentItemToScroll(newItemToScroll);
     };
 
     window.addEventListener("resize", handleResize);
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
-  }, [responsiveConfig, visibleCount, itemToScroll]);
+  }, [
+    responsiveConfig,
+    visibleCount,
+    itemToScroll,
+    items.length,
+    currentItemToScroll,
+  ]);
 
   useLayoutEffect(() => {
     if (!itemRef.current) return;
 
     const observer = new ResizeObserver(() => {
-      setItemWidth(itemRef.current!.offsetWidth);
+      if (itemRef.current) {
+        setItemWidth(itemRef.current.offsetWidth);
+      }
     });
 
     observer.observe(itemRef.current);
@@ -86,17 +117,22 @@ export default function Carousel<T>({
     return () => observer.disconnect();
   }, [currentVisibleCount, items]);
 
-  // Set item width
   useLayoutEffect(() => {
     if (itemRef.current) {
       setItemWidth(itemRef.current.offsetWidth);
     }
   }, [items, currentVisibleCount]);
 
-  // Update translateX when currentIndex changes
   useLayoutEffect(() => {
     setTranslateX(-currentIndex * itemWidth * currentItemToScroll);
   }, [currentIndex, itemWidth, currentItemToScroll]);
+
+  useLayoutEffect(() => {
+    if (currentIndex >= totalSlides && totalSlides > 0) {
+      const newIndex = Math.max(0, totalSlides - 1);
+      setCurrentIndex(newIndex);
+    }
+  }, [currentIndex, totalSlides]);
 
   // AutoPlay
   useLayoutEffect(() => {
@@ -149,46 +185,56 @@ export default function Carousel<T>({
     containerRef.current?.releasePointerCapture(e.pointerId);
   };
 
+  const handlePointerCancel = (e: PointerEvent<HTMLDivElement>) => {
+    handlePointerUp(e);
+  };
+
   return (
     <div className={styles.carouselWrapper}>
-      <button
-        className={styles.prevButton}
-        onClick={handlePrev}
-        disabled={currentIndex === 0}
-      >
-        &larr;
-      </button>
-
-      <div
-        className={styles.itemsList}
-        ref={containerRef}
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerLeave={handlePointerUp}
-        style={{
-          transform: `translateX(${translateX + dragOffset}px)`,
-        }}
-      >
-        {items.map((item, index) => (
-          <div
-            key={index}
-            ref={index === 0 ? itemRef : null}
-            className={styles.item}
-            style={{ flex: `0 0 ${100 / currentVisibleCount}%` }}
+      {items.length > 0 && (
+        <>
+          <button
+            className={styles.prevButton}
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
           >
-            {renderItem(item, index)}
-          </div>
-        ))}
-      </div>
+            &larr;
+          </button>
 
-      <button
-        className={styles.nextButton}
-        onClick={handleNext}
-        disabled={currentIndex >= totalSlides - 1}
-      >
-        &rarr;
-      </button>
+          <div
+            className={styles.itemsList}
+            ref={containerRef}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerLeave={handlePointerUp}
+            onPointerCancel={handlePointerCancel}
+            style={{
+              transform: `translateX(${translateX + dragOffset}px)`,
+            }}
+          >
+            {items.map((item, index) => (
+              <div
+                key={index}
+                ref={index === 0 ? itemRef : null}
+                className={styles.item}
+                style={{ flex: `0 0 ${100 / currentVisibleCount}%` }}
+              >
+                {renderItem(item, index)}
+              </div>
+            ))}
+          </div>
+
+          <button
+            className={styles.nextButton}
+            onClick={handleNext}
+            disabled={currentIndex >= totalSlides - 1}
+          >
+            &rarr;
+          </button>
+        </>
+      )}
+
       {totalSlides > 1 && (
         <div className={styles.dotsContainer}>
           {Array.from({ length: totalSlides }).map((_, index) => (

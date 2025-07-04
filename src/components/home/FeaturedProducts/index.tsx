@@ -35,7 +35,7 @@ const FeaturedProducts = () => {
   const products = useProducts();
   return (
     <div className={styles.filteredProductSection}>
-      <h2>Looking for a specific size11?</h2>
+      <h2>Looking for a specific size?</h2>
       <Tabs
         tabs={a}
         renderContent={(selectedItem) => {
